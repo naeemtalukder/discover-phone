@@ -8,7 +8,7 @@ const searchPhone = () => {
     const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`;
     fetch(url)
         .then(res => res.json())
-        .then(data => displaysearchResult(data.data));
+        .then(data => displaysearchResult(data.data.slice(0, 15)));
 }
 
 const displaysearchResult = data => {
@@ -18,10 +18,10 @@ const displaysearchResult = data => {
     else {
         document.getElementById('no-pound').style.display = "none";
     }
+
     const searchResult = document.getElementById('search-result');
     searchResult.textContent = '';
     for (const phones of data) {
-        // console.log(phone);
         const div = document.createElement('div');
         div.classList.add('col');
         div.innerHTML = `<div class="card my-2" style="width: 18rem;">
@@ -42,7 +42,6 @@ const phoneDetails = id => {
         .then(data => displayPhoneDetails(data.data));
 };
 const displayPhoneDetails = data => {
-    console.log(data);
     const showPhoneDetails = document.getElementById('phone-details');
     showPhoneDetails.textContent = '';
     const div = document.createElement('div');
@@ -57,13 +56,16 @@ const displayPhoneDetails = data => {
         <h4 class="card-title text-warning fw-bold">Brand: ${data.brand}</h4>
         <h5 class="card-sub-title text-info fw-bold">Name: ${data.name}</h5>
         <p class="card-text"><small class="text-muted">Release Date: ${data.releaseDate}</small></p>
+
         <h5 class="card-sub-title text-success fw-bold">Main Features</h5>
         <p><span class="fw-bold text-info">Sensors: </span>${data.mainFeatures.sensors}</p>
+
         <p><span class="fw-bold">Storage: </span>
         ${data.mainFeatures.storage}</p>
         <p><span class="fw-bold">Chipset: </span>${data.mainFeatures.chipSet}</p>
         <p><span class="fw-bold">Memory: </span>${data.mainFeatures.memory}</p>
         <p><span class="fw-bold">Display Size: </span>${data.mainFeatures.displaySize}</p>
+
         <h5 class="card-sub-title text-success fw-bold">Other</h5>
         <p><span class="fw-bold">WLAN: </span>${data.others.WLAN}</p>
         <p><span class="fw-bold">Bluetooth: </span>${data.others.Bluetooth}</p>
