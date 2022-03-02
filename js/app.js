@@ -58,6 +58,7 @@ const displayPhoneDetails = data => {
         <h5 class="card-sub-title text-info fw-bold">Name: ${data.name}</h5>
         <p class="card-text"><small class="text-muted">Release Date: ${data.releaseDate}</small></p>
         <h5 class="card-sub-title text-success fw-bold">Main Features</h5>
+        <p><span class="fw-bold text-info">Sensors: </span>${data.mainFeatures.sensors}</p>
         <p><span class="fw-bold">Storage: </span>
         ${data.mainFeatures.storage}</p>
         <p><span class="fw-bold">Chipset: </span>${data.mainFeatures.chipSet}</p>
