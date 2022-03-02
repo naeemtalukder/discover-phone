@@ -48,14 +48,32 @@ const displayPhoneDetails = data => {
     const div = document.createElement('div');
     div.classList.add('card');
     div.innerHTML = `
-        <div class="card">
-            <img src="${data.image}" class="card-img-top" alt="...">
-            <div class="card-body">
-            <h4 class="card-title text-center">${data.slug}</h4>
-            <h5 class="card-text text-center">${data.releaseDate}</h5>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
+    <div class="row g-0">
+    <div class="col-md-4">
+      <img src="${data.image}" class="w-100 mt-5 pe-3 ps-5 d-block" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h4 class="card-title">Brand: ${data.brand}</h4>
+        <h5 class="card-sub-title">Name: ${data.name}</h5>
+        <p class="card-text"><small class="text-muted">Release Date: ${data.releaseDate}</small></p>
+        <h5 class="card-sub-title fw-bold">Main Features</h5>
+        <p><span class="fw-bold">Storage: </span>
+        ${data.mainFeatures.storage}</p>
+        <p><span class="fw-bold">Chipset: </span>${data.mainFeatures.chipSet}</p>
+        <p><span class="fw-bold">Memory: </span>${data.mainFeatures.memory}</p>
+        <p><span class="fw-bold">Display Size: </span>${data.mainFeatures.displaySize}</p>
+        <h5 class="card-sub-title fw-bold">Other</h5>
+        <p><span class="fw-bold">WLAN: </span>${data.others.WLAN}</p>
+        <p><span class="fw-bold">Bluetooth: </span>${data.others.Bluetooth}</p>
+        <p><span class="fw-bold">GPS: </span>${data.others.GPS}</p>
+        <p><span class="fw-bold">NFC: </span>${data.others.NFC}</p>
+        <p><span class="fw-bold">Radio: </span>${data.others.Radio}</p>
+        <p><span class="fw-bold">USB: </span>${data.others.USB}</p>
         </div>
+    </div>
+  </div>
+       
         `;
     showPhoneDetails.appendChild(div);
 }
