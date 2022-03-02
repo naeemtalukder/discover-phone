@@ -54,16 +54,16 @@ const displayPhoneDetails = data => {
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        <h4 class="card-title">Brand: ${data.brand}</h4>
-        <h5 class="card-sub-title">Name: ${data.name}</h5>
+        <h4 class="card-title text-warning fw-bold">Brand: ${data.brand}</h4>
+        <h5 class="card-sub-title text-info fw-bold">Name: ${data.name}</h5>
         <p class="card-text"><small class="text-muted">Release Date: ${data.releaseDate}</small></p>
-        <h5 class="card-sub-title fw-bold">Main Features</h5>
+        <h5 class="card-sub-title text-success fw-bold">Main Features</h5>
         <p><span class="fw-bold">Storage: </span>
         ${data.mainFeatures.storage}</p>
         <p><span class="fw-bold">Chipset: </span>${data.mainFeatures.chipSet}</p>
         <p><span class="fw-bold">Memory: </span>${data.mainFeatures.memory}</p>
         <p><span class="fw-bold">Display Size: </span>${data.mainFeatures.displaySize}</p>
-        <h5 class="card-sub-title fw-bold">Other</h5>
+        <h5 class="card-sub-title text-success fw-bold">Other</h5>
         <p><span class="fw-bold">WLAN: </span>${data.others.WLAN}</p>
         <p><span class="fw-bold">Bluetooth: </span>${data.others.Bluetooth}</p>
         <p><span class="fw-bold">GPS: </span>${data.others.GPS}</p>
